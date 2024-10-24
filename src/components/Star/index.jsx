@@ -1,19 +1,13 @@
 import { useState } from 'react';
 import './style.css';
 
-export const Star = ({value, onSelect}) => {
-  const [glowing, setGlowing] = useState(false);
+export const Star = ({value, onSelect, glowing}) => {
 
-  // const handleClick = () => {
-  //   setGlowing(true); 
-  //   onSelect(value);
-  // };
-  
   const starClass = glowing
     ? 'rating__star rating__star--on'
     : 'rating__star';
 
   return (
-    <div onClick={() => { onSelect(value); setGlowing(true); }} className={starClass}></div>
+    <div onClick={() => { onSelect(value); }} className={starClass}></div>
   );
 };
